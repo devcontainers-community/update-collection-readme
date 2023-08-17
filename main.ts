@@ -11,11 +11,13 @@ let path = core.getInput("path")
 if ((await lstat(path)).isDirectory()) {
   [path] = await glob(join(path, "[Rr][Ee][Aa][Dd][Mm][Ee].(md|mdown|markdown)"))
 }
+console.log("resolved path", path)
 
 let collection = core.getInput("collection")
 if (!collection.includes(":")) {
   collection += ":latest"
 }
+console.log("resolved collection", collection)
 
 let md = await readFile(path, "utf8");
 
