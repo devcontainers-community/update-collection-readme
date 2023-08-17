@@ -1,0 +1,41 @@
+name: Test action
+on:
+  push:
+    branches: "main"
+    paths-ignore:
+      - .gitignore
+      - .gitattributes
+      - LICENSE
+      - README.md
+      - .github/**
+      - "!.github/workflows/test-action.yml"
+  pull_request:
+    paths-ignore:
+      - .gitignore
+      - .gitattributes
+      - LICENSE
+      - README.md
+      - .github/**
+      - "!.github/workflows/test-action.yml"
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  publish-test:
+    concurrency: ${{ github.ref }}-write
+    permissions:
+      contents: write
+      packages: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: oras-project/setup-oras@v1
+      - uses: ./
+        with:
+          path: test
+          collection: ghcr.io/devcontainers/features
+      - uses: ./
+        with:
+          path: test
+          collection: ghcr.io/devcontainers/templates
+      - uses: stefanzweifel/git-auto-commit-action@v4
