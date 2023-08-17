@@ -9,7 +9,10 @@ import { glob } from "npm:glob"
 
 let path = core.getInput("path")
 if ((await lstat(path)).isDirectory()) {
-  [path] = await glob(join(path, "[Rr][Ee][Aa][Dd][Mm][Ee].(md|mdown|markdown)"))
+  console.log("original path")
+  const pattern = join(path, "[Rr][Ee][Aa][Dd][Mm][Ee].(md|mdown|markdown)")
+  console.log("glob pattern", pattern)
+  [path] = await glob(pattern)
 }
 console.log("resolved path", path)
 
