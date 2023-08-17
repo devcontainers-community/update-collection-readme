@@ -1,5 +1,5 @@
 #!/usr/bin/env -S deno run -A
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile, lstat } from "node:fs/promises";
 import { $ } from "npm:zx";
 import process from "node:process";
 import { temporaryDirectory, temporaryWrite } from "npm:tempy";
