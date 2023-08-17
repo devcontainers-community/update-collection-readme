@@ -9,12 +9,17 @@ import * as core from "npm:@actions/core"
 const path = core.getInput("path")
 process.chdir(path)
 
+let collection = core.getInput("collection")
+if (!collection.includes(":")) {
+  collection += ":latest"
+}
+
 let md = await readFile("README.md", "utf8");
 
 const tempDirPath = temporaryDirectory();
 $.cwd = tempDirPath;
 
-await $`oras pull ghcr.io/${process.env.GITHUB_REPOSITORY}:latest`;
+await $`oras pull ${collection}`;
 const devcontainerCollection = JSON.parse(
   await readFile(join($.cwd, "devcontainer-collection.json"), "utf8")
 );
