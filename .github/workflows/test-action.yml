@@ -29,7 +29,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: oras-project/setup-oras@v1
       - uses: ./
         with:
           path: test
@@ -38,4 +37,5 @@ jobs:
         with:
           path: test
           collection: ghcr.io/devcontainers/templates
+      - run: cat test/README.md
       - uses: stefanzweifel/git-auto-commit-action@v4
