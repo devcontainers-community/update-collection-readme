@@ -1,0 +1,19 @@
+name: Update Dev Container collection readme
+description: 📘 Injects a list of all features and templates in a collection into the readme
+branding:
+  icon: book
+  color: red
+inputs:
+  path:
+    default: .
+  collection:
+    default: ghcr.io/${{ github.repository }}
+runs:
+  using: composite
+  steps:
+    - id: main
+      run: '"$GITHUB_ACTION_PATH/mainw"'
+      shell: bash
+      env:
+        INPUT_PATH: ${{ inputs.path }}
+        INPUT_COLLECTION: ${{ inputs.collection }}
