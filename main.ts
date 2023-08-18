@@ -37,8 +37,18 @@ console.log(devcontainerCollection);
 
 if (devcontainerCollection.features) {
   const featureListMD = devcontainerCollection.features
-    .filter((f) => f.documentationURL)
-    .map((f) => `- **[${f.name}](${f.documentationURL})** - ${f.description}`)
+    .map((f) => {
+      let s
+      if (f.documentationURL) {
+        s = `- **[${f.name || f.id}](${f.documentationURL})**`
+      } else {
+        s = `- **${f.name || f.id}**`
+      }
+      if (f.description) {
+        s += ` - ${f.description}`
+      }
+      return s
+    })
     .join("\n");
   console.log(featureListMD);
 
@@ -50,8 +60,18 @@ if (devcontainerCollection.features) {
 
 if (devcontainerCollection.templates) {
   const templateListMD = devcontainerCollection.templates
-    .filter((f) => f.documentationURL)
-    .map((f) => `- **[${f.name}](${f.documentationURL})** - ${f.description}`)
+    .map((f) => {
+      let s
+      if (f.documentationURL) {
+        s = `- **[${f.name || f.id}](${f.documentationURL})**`
+      } else {
+        s = `- **${f.name || f.id}**`
+      }
+      if (f.description) {
+        s += ` - ${f.description}`
+      }
+      return s
+    })
     .join("\n");
   console.log(templateListMD);
 
