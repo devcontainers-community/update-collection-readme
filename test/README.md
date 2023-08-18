@@ -3,7 +3,7 @@ Feature list:
 <!-- prettier-ignore-start -->
 <!-- START_FEATURE_LIST -->
 
-- **[Anaconda](https://github.com/devcontainers/features/tree/main/src/anaconda)** - undefined
+- **[Anaconda](https://github.com/devcontainers/features/tree/main/src/anaconda)**
 - **[AWS CLI](https://github.com/devcontainers/features/tree/main/src/aws-cli)** - Installs the AWS CLI along with needed dependencies. Useful for base Dockerfiles that often are missing required install dependencies like gpg.
 - **[Azure CLI](https://github.com/devcontainers/features/tree/main/src/azure-cli)** - Installs the Azure CLI along with needed dependencies. Useful for base Dockerfiles that often are missing required install dependencies like gpg.
 - **[Common Utilities](https://github.com/devcontainers/features/tree/main/src/common-utils)** - Installs a set of common command line utilities, Oh My Zsh!, and sets up a non-root user.
@@ -16,14 +16,14 @@ Feature list:
 - **[Git Large File Support (LFS)](https://github.com/devcontainers/features/tree/main/src/git-lfs)** - Installs Git Large File Support (Git LFS) along with needed dependencies. Useful for base Dockerfiles that often are missing required install dependencies like git and curl.
 - **[GitHub CLI](https://github.com/devcontainers/features/tree/main/src/github-cli)** - Installs the GitHub CLI. Auto-detects latest version and installs needed dependencies.
 - **[Go](https://github.com/devcontainers/features/tree/main/src/go)** - Installs Go and common Go utilities. Auto-detects latest version and installs needed dependencies.
-- **[Hugo](https://github.com/devcontainers/features/tree/main/src/hugo)** - undefined
+- **[Hugo](https://github.com/devcontainers/features/tree/main/src/hugo)**
 - **[Java (via SDKMAN!)](https://github.com/devcontainers/features/tree/main/src/java)** - Installs Java, SDKMAN! (if not installed), and needed dependencies.
 - **[Kubectl, Helm, and Minikube](https://github.com/devcontainers/features/tree/main/src/kubectl-helm-minikube)** - Installs latest version of kubectl, Helm, and optionally minikube. Auto-detects latest versions and installs needed dependencies.
 - **[Nix Package Manager](https://github.com/devcontainers/features/tree/main/src/nix)** - Installs the Nix package manager and optionally a set of packages.
 - **[Node.js (via nvm), yarn and pnpm](https://github.com/devcontainers/features/tree/main/src/node)** - Installs Node.js, nvm, yarn, pnpm, and needed dependencies.
 - **[NVIDIA CUDA](https://github.com/devcontainers/features/tree/main/src/nvidia-cuda)** - Installs shared libraries for NVIDIA CUDA.
 - **[Oryx](https://github.com/devcontainers/features/tree/main/src/oryx)** - Installs the oryx CLI
-- **[PHP](https://github.com/devcontainers/features/tree/main/src/php)** - undefined
+- **[PHP](https://github.com/devcontainers/features/tree/main/src/php)**
 - **[PowerShell](https://github.com/devcontainers/features/tree/main/src/powershell)** - Installs PowerShell along with needed dependencies. Useful for base Dockerfiles that often are missing required install dependencies like gpg.
 - **[Python](https://github.com/devcontainers/features/tree/main/src/python)** - Installs the provided version of Python, as well as PIPX, and other common Python utilities.  JupyterLab is conditionally installed with the python feature. Note: May require source code compilation.
 - **[Ruby (via rvm)](https://github.com/devcontainers/features/tree/main/src/ruby)** - Installs Ruby, rvm, rbenv, common Ruby utilities, and needed dependencies.
